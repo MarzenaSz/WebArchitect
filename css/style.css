@@ -1,0 +1,436 @@
+* {
+    /* remove all margins and paddings */
+    margin: 0;
+    padding: 0;
+    /* the width and height properties
+     includes content, padding and border, but not the margin */
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* basic set up */
+html, body {
+    background-color: #fff;
+    color:  #555;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
+.container {
+	width: 100%;
+	overflow: hidden;
+}
+
+li {
+	list-style: none
+}
+
+a {
+	text-decoration: none;
+}
+
+
+section {
+	background-color: #f5f5f5;
+	border-radius: 15px;
+} 
+
+/* clear after floats */
+section:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+
+
+/* ************************************** STYLE HEADER ***************************************** */
+
+header {
+	/* make it as width as the viewport */
+	width: 100%;
+	/* make is as heigh as the viewport */
+	height: 100vh;
+	/* set up the background for the webside with a slight gradient */
+	background: linear-gradient(rgba(252, 164, 124, 0.5), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(../images/London.jpg) no-repeat center;
+	background-size: cover;
+	/* move the header to the right after clicking the nav icon */
+	float: right;
+	/* animate width when on click from 100% the width will change to 80% to make some space for our navigation */
+	transition: width .5s;
+}
+
+header .hero-text {
+	width: 80%;
+	position: absolute;
+	/* center this container */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* center text inside the container */
+	text-align: center;
+	/* transform the text to be uppercase */
+	text-transform: uppercase;
+}
+
+header .hero-text h1 {
+	/* increase the font size */
+	font-size: 275%;
+	/* reduce the font weight */
+	font-weight: 300;
+	/* add some space under the main header */
+	margin-bottom: 1%;
+	color: #fff;
+}
+
+header .hero-text p {
+	/* increase the font size */
+	font-size: 130%;
+	color: #eee;
+	/* add some space to the botom of the paragraph */
+	margin-bottom: 2.5%;
+}
+
+header .hero-text a {
+	/* make the bacground transparent */
+	background: transparent;
+	/* set its color to white */
+	color: #fff;
+	/* add a border to the link */
+	border: 2px solid #fff;
+	/* add some space inside of the link to resemble a button */
+	padding: 0.5% 1.5%;
+	/* round the corners of the border */
+	border-radius: 20px;
+	/* add some space to the right */
+	margin-right: 1%;
+	/* decrease the font size */
+	font-size: 90%;
+	/* make a nice transition between backgrounds */
+	transition: background .4s;
+}
+
+header .hero-text a:hover {
+	/* change background color to gray */
+	background: rgba(87, 87, 87, 0.75);
+}
+
+header label i.ion-grid {
+	/* increase the size */
+	font-size: 200%;
+	/* add some space around the content */
+	padding: 10px;
+	/* set text color to white */
+	color: #fff;
+	/* transition nicely between text colors */
+	transition: color .4s;
+}
+
+header label i.ion-grid:hover {
+	/* change color to black */
+	color: #333333;
+}
+
+.header-nav {
+	position: absolute;
+	/* remove the spece between the top on the window and the navigation */
+	top: 0;
+	/* hide the navigation by default so we can show it on click later on */
+	left: -20%;
+	/* make its height to take up the whole height viewport */
+	height: 100vh;
+	/* set its width to 2% */
+	width: 20%;
+	/* set the background to dark gray */
+	background-color: #333333;	
+	/* animate left nav pop up */
+	transition: left .5s;
+}
+
+.header-nav ul {
+	/* make some space in the top */
+	margin-top: 10%;
+}
+
+.header-nav ul li {
+	/* make some space in the bottom */
+	margin-bottom: 5%;
+	/* add some space to the left */
+	padding-left: 5%;
+	/* add some space between elements */
+	padding-bottom: 1.5%;
+	/* add bottom border to everyelement and color it to slightly transparent white */
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.header-nav ul li a {
+	display: inline-block;
+	/* add some padding to the link */
+	padding: 5% 0 0 3%;
+	/* color the text to white */
+	color: #fff;
+	/* set its width to 80% */
+	width: 80%;
+	/* make the text bolder */
+	font-weight: bold;
+	/* transition text scaling */
+	transition: transform .2s ease-in-out;
+}
+
+.header-nav ul li a:hover {
+	/* scale the text on hover */
+	transform: scale(1.1);
+}
+
+/* ******************** CLICK EVENT **************************** */
+
+#nav-control:checked ~ .header-clear header {
+	/* set width to 80% and animate it */
+	width: 80%;
+}
+
+#nav-control:checked ~ .header-clear header .header-nav {
+	/* set left to 0 so the nav will show up on the screen, and animate it */
+	left: 0;
+}
+/* clear float */
+.header-clear:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+
+/******************************************************************************************************************************************************************/
+
+/* ************************************** SECTION FEARURES ***************************************** */
+.features-section {
+	/* center this section */
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.features-section h2 {
+	/* center the text */
+	text-align: center;
+	/* add some space between images and the text */
+	margin: 4% 0 2% 0;
+	padding-top: 2%;
+}
+
+.features-section figure {
+	/* add some space between images */
+	margin: 1%;
+	/* set width to 31% so we can fit 3 images next to each other in one row */
+	width: 31.333%;
+	/* float image to the left so the pictures will locate themself nect to each other */
+	float: left;
+	/* set it to have relative position for figcaption purposes */
+	position: relative; 
+	/* set overflow to hidden so our scaled on hover images wont overflow images next to them, so besicaly they will be nicely contained inside the columns */
+	overflow: hidden;
+}
+
+.features-section figure figcaption {
+	/* set position to absolute */
+	position: absolute; 
+	
+	/* make it to appear in the left bottom corner of our figure */
+	top: 0; 
+	/* center the text */
+	text-align: center;
+	/* make the text bolder */
+	font-weight: bold;
+	/* set text color to white */
+	color: #fff;
+	/* add some gradient to the text so it will be visible on every background */
+	background: linear-gradient(to right, rgb(93, 93, 93), #aaa);
+}
+
+.features-section figure img {
+	/* make the picture to fit to its container/wraper */
+	width: 100%;
+	margin: 0;
+	/* make the image a little bit transparent */
+	opacity: 0.8;
+	/* scale the picture a little bit */
+	transform: scale(1.09, 1.09);
+	/* make scaling smoother */
+	transition: transform .5s, opacity .5s;
+}
+
+.features-section figure img:hover {
+	/* make the image biger on hover */
+	transform: scale(1.3, 1.3);
+	/* set opacity to 1 - to its normal color */
+	opacity: 1;
+	
+}
+
+.second-part figure figcaption {
+	position: static;
+	/* center the text */
+	text-align: center;
+	/* remove the background */
+	background: none;
+	/* set text color to dark gray */
+	color: #555;
+}
+
+.second-part figure img {
+	/* set width to 100% so the image will fill in the whole container */
+	width: 100%;
+	/* remove all margins */
+	margin: 0;
+	/* make it a bit transparent */
+	opacity: .8;
+	/* scale the image */
+	transform: scale(0.7, 0.7);
+}
+
+.second-part figure img:hover {
+	/* scale the image on hover - make it bigger */
+	transform: scale(1.0, 1.0);
+}
+
+.our-team-section {
+	width: 90%;
+	/* center the container */
+	margin: 3% auto;
+	/* overflow: hidden; */
+	padding-bottom: 1%;
+}
+
+.our-team-section h2 {
+	/* center the text */
+	text-align: center;
+	/* add some space */
+	margin-bottom: 2%;
+	padding-top: 2%;
+}
+
+.our-team-section .column {
+	/* set width to 31% so we can fit 3 pictures in a row */
+	width: 31.333%;
+	/* float the columns to the left */
+	float: left;
+	/* add some space between columns */
+	margin: 0 1%;
+}
+
+.our-team-section .column img {
+	/* set width to 100% so the image will fill in the whole column */
+	width: 100%;
+}
+
+.our-team-section .column details summary {
+	/* make the text bolder */
+	font-weight: bold;
+	/* increase the font size */
+	font-size: 115%;
+	/* add some space */
+	padding: 2% 0;
+}
+
+.our-team-section .column details p {
+	/* add some indentation */
+	text-indent: 5%;
+}
+
+/******************************************************************************************************************************************************************/
+
+/* ************************************** SECTION VIDEO ***************************************** */
+.video-section {
+	/* take up the whole browser width */
+	width: 100%;
+	/* add a nice linear background */
+	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../video/video-bg.jpg) no-repeat center;
+	background-size: cover;
+	/* add some space */
+	padding: 5% 0;
+	margin-bottom: 3%;
+	/* set background color to black */
+	background-color: #222222;
+	/* get rid of rounded corners in this section */
+	border-radius: 0;
+	
+}
+
+.video-section .video-container{
+	width: 40%;
+	float: right;
+}
+
+.video-section .video-container video {
+	width: 60%;
+	margin-left: 10%;
+}
+
+.video-section .text-container {
+	width 60%;
+	color: #fff;
+	text-align: center;
+	padding: 0 4%;
+}
+
+.video-section .text-container p {
+	text-align: justify;
+	text-indent: 3%;
+	padding-top: 1%;
+}
+
+.google-map {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/google-map-bg.jpg) no-repeat center;
+	background-size: cover;
+	padding: 2% 0;
+	/* get rid of rounded corners in this section */
+	border-radius: 0;
+}
+
+.google-map h2 {
+	color: #fff;
+	text-align: center;
+	padding: 1%;
+	margin: auto;
+}
+
+.google-map div {
+	width: 50%;
+	float: left;
+}
+
+.google-map div.map iframe {
+	min-height: 340px;
+	width: 90%;
+	margin: 2% 5%;
+}
+
+.google-map div form {
+	width: 90%;
+	margin: auto;
+	padding-top: 1%;
+}
+
+.google-map div form input, .google-map div form textarea {
+	/* make them to deisplay as a blok so they wont be scattered around */
+	display: block;
+	width: 90%;
+	margin: 1% 5%;
+	padding: 1% 0;
+	font-size: 70%;
+	background-color: #fff;
+}
+
+.google-map div form input[type="submit"]{
+	width: 25%;
+	color: #fff;
+	background-color: #555;
+	transition: background-color .3s, color .3s;
+}
+
+.google-map div form input[type="submit"]:hover {
+	background-color: #fff;
+	color: #555;
+}
